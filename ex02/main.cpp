@@ -45,14 +45,16 @@ void	identify(Base &p)
 	{
 		try
 		{
-			dynamic_cast<B&>(p);
+			B &b = dynamic_cast<B&>(p);
+			(void)b;
 			std::cout << "I'm a ref to B class\n";
 		}
 		catch (std::exception &e)
 		{
 			try
 			{
-				dynamic_cast<C&>(p);
+				C &c = dynamic_cast<C&>(p);
+				(void)c;
 				std::cout << "I'm a ref to C class\n";
 			}
 			catch (std::exception &e)

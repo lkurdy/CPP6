@@ -44,9 +44,9 @@ void	ScalarConverter::convert(std::string value)
 			std::cout << "char: Non displayable\n";
 		else
 			std::cout << "char: " << value << std::endl;
-		std::cout << "int: Impossible\n"; 
-		std::cout << "float: Impossible\n"; 
-		std::cout << "double: Impossible\n"; 
+		std::cout << "int: "<< static_cast<int>(value[0]) << std::endl; 
+		std::cout << "float: " << static_cast<float>(value[0]) << ".0f" << std::endl;
+		std::cout << "double: " << static_cast<double>(value[0]) << ".0" << std::endl;
 	}
 	else if (isNumber(value) || !value.compare("-inff") || !value.compare("+inff") || !value.compare("nanf") || !value.compare("-inf") || !value.compare("+inf") || !value.compare("nan"))
 	{
